@@ -1,0 +1,16 @@
+version: '3'
+services:
+  db:
+    image: postgres
+    ports:
+    - "5432:5432"
+    environment:
+      POSTGRES_USER: "admin"
+      POSTGRES_PASSWORD: "1234"
+      POSTGRES_DB: "db"
+    restart: unless-stopped
+  node-app:
+    build: .
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
