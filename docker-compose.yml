@@ -1,9 +1,9 @@
-version: '3'
+version: "3"
 services:
   db:
     image: postgres
     ports:
-    - "5432:5432"
+      - "8787:8787"
     environment:
       POSTGRES_USER: "admin"
       POSTGRES_PASSWORD: "1234"
@@ -12,5 +12,5 @@ services:
   node-app:
     build: .
     ports:
-      - "8080:8080"
+      - "8888:8888"
     restart: unless-stopped
